@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+
+        <!--HSQLDB-->
+
+        <!-- Database connection settings -->
+        <property name="connection.url">jdbc:hsqldb:file:projectDB/DataBase;shutdown=true</property>
+        <property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
+        <property name="connection.username">SA</property>
+        <property name="connection.password"></property>
+
+
+        <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.">true</property>
+
+        <property name="format_sql">true</property>
+
+        <property name="hbm2ddl.auto">update</property>
+        <!-- JDBC connection pool (use the built-in) -->
+        <!--<property name="connection.pool_size">1</property>-->
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">100</property>
+        <property name="current_session_context_class">thread</property>
+        <property name="hibernate.order_updates">true</property>
+        <property name="hibernate.order_inserts">true</property>
+
+
+
+        <!--&lt;!&ndash; Drop and re-create the database schema on startup-->
+        <!--<property name="hbm2ddl.auto">create</property>-->
+
+        <mapping class="sender.Entity.Departments" />
+        <mapping class="sender.Entity.DistributionGroups" />
+        <mapping class="sender.Entity.PatternMessage" />
+        <mapping class="sender.Entity.GroupPivotTable" />
+        <mapping class="sender.Entity.EmailPost" />
+        <mapping class="sender.Entity.Post" />
+        <mapping class="sender.Entity.SNPStaff" />
+        <mapping class="sender.Entity.Telephone" />
+        <mapping class="sender.Entity.SMSSending" />
+        <mapping class="sender.Entity.PivotTable" />
+
+
+
+    </session-factory>
+</hibernate-configuration>
